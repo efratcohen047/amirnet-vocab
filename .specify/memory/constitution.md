@@ -1,19 +1,17 @@
 <!--
 Sync Impact Report
-- Version change: 1.0.0 → 1.1.0 (MINOR: two principles added, one expanded, one constraint added)
+- Version change: 1.1.0 → 1.1.1 (PATCH: wording clarification)
 - Modified principles:
-  V. Learning Effectiveness First — expanded: frequency-first ordering, Amirnet-style exercises
-  VII. Content as Data — frequency rank is now a required field
-- Added principles:
-  XI. Measurable Outcomes (20 words/day target, practice test every two weeks)
-  XII. Motivation & Momentum (streak, "how much is left" view)
-- Added to Technical Constraints: MVP is single-user, no login
+  V. Learning Effectiveness First — "Frequency-first" now ranks words by general and
+  academic English frequency from the source word lists, as a proxy for Amirnet exam
+  frequency (no public Amirnet word-frequency data exists)
+- Added sections: none
 - Removed sections: none
 - Templates:
-  ✅ .specify/templates/plan-template.md — Constitution Check gates are derived from this file; no edit needed
-  ✅ .specify/templates/spec-template.md — no mandatory section changes required
-  ✅ .specify/templates/tasks-template.md — note added: unit tests for core learning logic are mandatory
-  ✅ .claude/skills/speckit-* — no outdated agent-specific references found
+  ✅ .specify/templates/plan-template.md — no change needed
+  ✅ .specify/templates/spec-template.md — no change needed
+  ✅ .specify/templates/tasks-template.md — no change needed
+  ✅ .claude/skills/speckit-* — no references to frequency ordering
   ⚠ README.md — does not exist yet; MUST be created during first feature (Principle X)
 - Deferred TODOs: none
 -->
@@ -76,8 +74,9 @@ anyone's laptop being on.
 - Review uses spaced repetition (Leitner boxes or SM-2).
 - Progress toward 3000 words MUST be visible: new / learning / learned counts.
 - The core loop is a short daily session (5–15 minutes) startable in one tap.
-- Frequency-first: new words are introduced in order of how often they appear in Amirnet
-  exams, so the highest-value words are learned first.
+- Frequency-first: new words are introduced in order of general and academic English
+  frequency (from the source word lists), as the best available proxy for Amirnet exam
+  frequency, so the highest-value words are learned first.
 - Exam-style practice: beyond word↔translation flashcards, the app MUST offer exercises in
   Amirnet formats — sentence completion and restatement (rephrasing).
 
@@ -177,4 +176,4 @@ her coming back.
 - When principles conflict, priority order is:
   III Security > II Usable Today > V Learning Effectiveness > I Fast & Dirty > all others.
 
-**Version**: 1.1.0 | **Ratified**: 2026-10-21 | **Last Amended**: 2026-10-25
+**Version**: 1.1.1 | **Ratified**: 2026-10-21 | **Last Amended**: 2026-10-25
