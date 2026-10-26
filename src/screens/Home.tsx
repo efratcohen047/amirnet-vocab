@@ -7,6 +7,7 @@ interface Props {
   nextDue: LocalDate | null;
   /** Every loaded word has been introduced; new words arrive with the next batch. */
   noNewWords: boolean;
+  streak: number;
   onStart: () => void;
 }
 
@@ -15,7 +16,7 @@ const formatDay = (day: LocalDate) =>
     new Date(`${day}T12:00:00`),
   );
 
-export default function Home({ status, nextDue, noNewWords, onStart }: Props) {
+export default function Home({ status, nextDue, noNewWords, streak, onStart }: Props) {
   return (
     <section className="home">
       <h1 className="home-title">אמירנט – אוצר מילים</h1>
@@ -25,6 +26,8 @@ export default function Home({ status, nextDue, noNewWords, onStart }: Props) {
           {status === 'resume' ? 'המשך' : 'התחל'}
         </button>
       )}
+
+      {streak > 0 && <p className="streak">🔥 {streak === 1 ? 'יום אחד ברצף' : `${streak} ימים ברצף`}</p>}
 
       {status === 'done' && <p className="home-msg">סיימת להיום 🎉</p>}
       {status === 'rest' && <p className="home-msg">אין מה ללמוד היום</p>}

@@ -135,14 +135,14 @@ hand calculation (quickstart step 8, SC-006).
 
 ### Tests for User Story 3 ⚠️ write first, must fail
 
-- [ ] T038 [P] [US3] Write `tests/core/stats.test.ts`. `goalTotal = max(3000, plannedTotal)`; `counts()` returns new/learning/learned summing to goalTotal, ignores unknown ids, and reports `loaded`. `streak()`: from today when today is completed or rest, else from yesterday; a gap resets it; recorded rest days count, but a day with no history record breaks the streak even if nothing was due (FR-018); the midnight case credits the start date. `pace()`: < 7 days since the first study day → `newPerDay`; otherwise (newCount + knownCount) over the last ≤ 14 calendar days ÷ days in the window. `finishDate()`: `today + ceil(toIntroduce / pace) + LEARN_DAYS`, where `LEARN_DAYS = INTERVAL[2] + INTERVAL[3] + INTERVAL[4]` (13, derived from leitner.ts, not hard-coded); `null` when pace is 0. `accuracy()`: `null` when the denominator is 0
+- [X] T038 [P] [US3] Write `tests/core/stats.test.ts`. `goalTotal = max(3000, plannedTotal)`; `counts()` returns new/learning/learned summing to goalTotal, ignores unknown ids, and reports `loaded`. `streak()`: from today when today is completed or rest, else from yesterday; a gap resets it; recorded rest days count, but a day with no history record breaks the streak even if nothing was due (FR-018); the midnight case credits the start date. `pace()`: < 7 days since the first study day → `newPerDay`; otherwise (newCount + knownCount) over the last ≤ 14 calendar days ÷ days in the window. `finishDate()`: `today + ceil(toIntroduce / pace) + LEARN_DAYS`, where `LEARN_DAYS = INTERVAL[2] + INTERVAL[3] + INTERVAL[4]` (13, derived from leitner.ts, not hard-coded); `null` when pace is 0. `accuracy()`: `null` when the denominator is 0
 
 ### Implementation for User Story 3
 
-- [ ] T039 [US3] Implement `src/core/stats.ts` with `goalTotal`, `counts`, `streak`, `pace`, `finishDate`, `accuracy` per data-model.md → Progress counts and StudyDay (depends on T038). Make T038 pass, and use `accuracy` in the Session summary in place of any inline calculation
-- [ ] T040 [P] [US3] Implement `src/screens/Progress.tsx`: three count tiles (חדשות / בלמידה / נלמדו) out of the goal total, a progress bar, the note "נטענו X מילים מתוך Y"; a "כמה נשאר" section with words not yet learned and the estimated finish date, labelled "כל המילים יילמדו בערך עד" and formatted with `Intl.DateTimeFormat('he-IL', { dateStyle: 'long' })` (or "—"), plus a note when the target pace is used
-- [ ] T041 [US3] Show the streak on `src/screens/Home.tsx` ("🔥 X ימים ברצף") under the start button, computed from history without delaying the button (FR-020)
-- [ ] T042 [US3] **Deploy**: merge into `main`, push; check quickstart step 8 on the phone
+- [X] T039 [US3] Implement `src/core/stats.ts` with `goalTotal`, `counts`, `streak`, `pace`, `finishDate`, `accuracy` per data-model.md → Progress counts and StudyDay (depends on T038). Make T038 pass, and use `accuracy` in the Session summary in place of any inline calculation
+- [X] T040 [P] [US3] Implement `src/screens/Progress.tsx`: three count tiles (חדשות / בלמידה / נלמדו) out of the goal total, a progress bar, the note "נטענו X מילים מתוך Y"; a "כמה נשאר" section with words not yet learned and the estimated finish date, labelled "כל המילים יילמדו בערך עד" and formatted with `Intl.DateTimeFormat('he-IL', { dateStyle: 'long' })` (or "—"), plus a note when the target pace is used
+- [X] T041 [US3] Show the streak on `src/screens/Home.tsx` ("🔥 X ימים ברצף") under the start button, computed from history without delaying the button (FR-020)
+- [X] T042 [US3] **Deploy**: merge into `main`, push; check quickstart step 8 on the phone
 
 **Checkpoint**: US1–US3 work together and independently
 

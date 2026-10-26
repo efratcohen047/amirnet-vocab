@@ -303,3 +303,58 @@ h2 {
   font-weight: 700;
   text-align: center;
 }
+
+.streak {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* Progress */
+.tiles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-block-end: 16px;
+}
+
+.tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px 4px;
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.tile-value {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.tile-label {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.bar {
+  display: flex;
+  block-size: 12px;
+  border-radius: 6px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.bar-learned {
+  background: var(--good);
+}
+
+.bar-learning {
+  background: var(--accent);
+  opacity: 0.6;
+}
+
+.progress h2 {
+  margin-block-start: 24px;
+}

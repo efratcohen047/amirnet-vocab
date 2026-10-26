@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { currentCard, isComplete, summarize } from '../core/session';
+import { accuracy } from '../core/stats';
 import type { Pos, Rating, Session as SessionT, Word } from '../types';
 
 const POS_HE: Record<Pos, string> = {
@@ -101,8 +102,7 @@ export default function Session({ session, wordById, onAnswer, onSkip, onDone }:
 
 function Summary({ session, onDone }: { session: SessionT; onDone: () => void }) {
   const s = summarize(session);
-  const rated = s.newCount + s.reviewCount;
-  const accuracy = rated ? `${Math.round((s.knewCount / rated) * 100)}%` : '—';
+  const acc = accuracy(s);
   return (
     <section className="session summary">
       <h2>כל הכבוד! סיימת את הסשן 🎉</h2>
@@ -114,7 +114,7 @@ function Summary({ session, onDone }: { session: SessionT; onDone: () => void })
         <dt>חזרות</dt>
         <dd>{s.reviewCount}</dd>
         <dt>דיוק</dt>
-        <dd>{accuracy}</dd>
+        <dd>{acc === null ? '—' : `${Math.round(acc * 100)}%`}</dd>
       </dl>
       <button className="primary big" onClick={onDone}>
         חזרה לבית

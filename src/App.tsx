@@ -13,10 +13,11 @@ import Home, { type HomeStatus } from './screens/Home';
 import Progress from './screens/Progress';
 import Session from './screens/Session';
 import Settings from './screens/Settings';
+import { counts, finishDate, pace, streak, usesTargetPace } from './core/stats';
 import { store } from './storage';
 import { getToday } from './today';
 import type { FlagMap, History, ProgressMap, Rating, Session as SessionT, Settings as SettingsT } from './types';
-import { wordById, words } from './words';
+import { plannedTotal, wordById, words } from './words';
 
 type View = 'home' | 'session' | 'progress' | 'settings';
 
@@ -87,6 +88,19 @@ export default function App() {
     if (session) setStudy(skip({ session, progress, history }, now()));
   };
 
+  const renderProgress = () => {
+    const c = counts(words, progress, plannedTotal);
+    const p = pace(history, settings, today);
+    return (
+      <Progress
+        counts={c}
+        pace={p}
+        usesTargetPace={usesTargetPace(history, today)}
+        finishDate={finishDate(c.toIntroduce, p, today)}
+      />
+    );
+  };
+
   if (view === 'session' && session) {
     return (
       <div className="app">
@@ -111,10 +125,11 @@ export default function App() {
             status={status}
             nextDue={nextDue(words, progress, today)}
             noNewWords={words.every((w) => progress[w.id])}
+            streak={streak(history, today)}
             onStart={start}
           />
         )}
-        {view === 'progress' && <Progress />}
+        {view === 'progress' && renderProgress()}
         {view === 'settings' && <Settings settings={settings} onChange={setSettings} />}
       </main>
       <nav className="nav">
