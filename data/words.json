@@ -1,0 +1,906 @@
+{
+  "version": 1,
+  "plannedTotal": 3185,
+  "words": [
+    {
+      "id": "claim",
+      "word": "claim",
+      "pos": "verb",
+      "he": "לטעון, טענה, לדרוש",
+      "example": "The authors claim that early reading habits shape later academic success.",
+      "rank": 1,
+      "source": "ngsl"
+    },
+    {
+      "id": "repertoire",
+      "word": "repertoire",
+      "pos": "noun",
+      "he": "רפרטואר, מגוון",
+      "example": "The pianist expanded her repertoire to include modern composers.",
+      "rank": 2,
+      "source": "nawl"
+    },
+    {
+      "id": "relationship",
+      "word": "relationship",
+      "pos": "noun",
+      "he": "קשר, יחסים",
+      "example": "The study examined the relationship between sleep and memory.",
+      "rank": 3,
+      "source": "ngsl"
+    },
+    {
+      "id": "travel",
+      "word": "travel",
+      "pos": "verb",
+      "he": "לנסוע, לנוע, לטייל",
+      "example": "Sound waves travel faster through water than through air.",
+      "rank": 4,
+      "source": "ngsl"
+    },
+    {
+      "id": "enjoy",
+      "word": "enjoy",
+      "pos": "verb",
+      "he": "ליהנות",
+      "example": "Many students enjoy group projects more than individual assignments.",
+      "rank": 5,
+      "source": "ngsl"
+    },
+    {
+      "id": "obtain",
+      "word": "obtain",
+      "pos": "verb",
+      "he": "להשיג, לקבל",
+      "example": "Researchers obtained the data from a national health survey.",
+      "rank": 6,
+      "source": "nawl"
+    },
+    {
+      "id": "death",
+      "word": "death",
+      "pos": "noun",
+      "he": "מוות",
+      "example": "The death of the king led to a long period of political conflict.",
+      "rank": 7,
+      "source": "ngsl"
+    },
+    {
+      "id": "nice",
+      "word": "nice",
+      "pos": "adj",
+      "he": "נחמד, נעים",
+      "example": "The weather was nice enough for the experiment to be conducted outdoors.",
+      "rank": 8,
+      "source": "ngsl"
+    },
+    {
+      "id": "amount",
+      "word": "amount",
+      "pos": "noun",
+      "he": "כמות, סכום",
+      "example": "The amount of plastic in the oceans has increased dramatically.",
+      "rank": 9,
+      "source": "ngsl"
+    },
+    {
+      "id": "distribution",
+      "word": "distribution",
+      "pos": "noun",
+      "he": "התפלגות, חלוקה, הפצה",
+      "example": "The distribution of wealth in the country remains highly unequal.",
+      "rank": 10,
+      "source": "nawl"
+    },
+    {
+      "id": "improve",
+      "word": "improve",
+      "pos": "verb",
+      "he": "לשפר, להשתפר",
+      "example": "Regular practice can significantly improve reading comprehension.",
+      "rank": 11,
+      "source": "ngsl"
+    },
+    {
+      "id": "picture",
+      "word": "picture",
+      "pos": "noun",
+      "he": "תמונה, ציור",
+      "example": "The report paints a clear picture of the economic situation.",
+      "rank": 12,
+      "source": "ngsl"
+    },
+    {
+      "id": "parameter",
+      "word": "parameter",
+      "pos": "noun",
+      "he": "פרמטר, גבול, מגבלה",
+      "example": "The committee set clear parameters for the new research project.",
+      "rank": 13,
+      "source": "nawl"
+    },
+    {
+      "id": "boy",
+      "word": "boy",
+      "pos": "noun",
+      "he": "ילד, נער",
+      "example": "In the study, boys and girls performed equally well on the test.",
+      "rank": 14,
+      "source": "ngsl"
+    },
+    {
+      "id": "regard",
+      "word": "regard",
+      "pos": "verb",
+      "he": "לראות כ-, להתייחס ל-, התחשבות",
+      "example": "Many historians regard the invention of printing as a turning point.",
+      "rank": 15,
+      "source": "ngsl"
+    },
+    {
+      "id": "organization",
+      "word": "organization",
+      "pos": "noun",
+      "he": "ארגון",
+      "example": "The organization provides free legal advice to new immigrants.",
+      "rank": 16,
+      "source": "ngsl"
+    },
+    {
+      "id": "aspect",
+      "word": "aspect",
+      "pos": "noun",
+      "he": "היבט, צד",
+      "example": "Cost is only one aspect of the problem.",
+      "rank": 17,
+      "source": "nawl"
+    },
+    {
+      "id": "happy",
+      "word": "happy",
+      "pos": "adj",
+      "he": "שמח, מאושר",
+      "example": "People who exercise regularly tend to report being happier.",
+      "rank": 18,
+      "source": "ngsl"
+    },
+    {
+      "id": "couple",
+      "word": "couple",
+      "pos": "noun",
+      "he": "זוג, כמה",
+      "example": "The survey included a couple of questions about family income.",
+      "rank": 19,
+      "source": "ngsl"
+    },
+    {
+      "id": "dynamic",
+      "word": "dynamic",
+      "pos": "adj",
+      "he": "דינמי, משתנה",
+      "example": "The job market is dynamic, so workers must keep learning new skills.",
+      "rank": 20,
+      "source": "nawl"
+    },
+    {
+      "id": "act",
+      "word": "act",
+      "pos": "verb",
+      "he": "לפעול, להתנהג, מעשה",
+      "example": "Governments must act quickly when a new disease begins to spread.",
+      "rank": 21,
+      "source": "ngsl"
+    },
+    {
+      "id": "range",
+      "word": "range",
+      "pos": "noun",
+      "he": "טווח, מגוון",
+      "example": "The museum offers a wide range of programs for schools.",
+      "rank": 22,
+      "source": "ngsl"
+    },
+    {
+      "id": "quality",
+      "word": "quality",
+      "pos": "noun",
+      "he": "איכות, תכונה",
+      "example": "The quality of the drinking water was tested every week.",
+      "rank": 23,
+      "source": "ngsl"
+    },
+    {
+      "id": "impact",
+      "word": "impact",
+      "pos": "noun",
+      "he": "השפעה, השלכה, פגיעה",
+      "example": "The new law had a strong impact on small businesses.",
+      "rank": 24,
+      "source": "nawl"
+    },
+    {
+      "id": "project",
+      "word": "project",
+      "pos": "noun",
+      "he": "פרויקט, מיזם",
+      "example": "The project aims to protect rare birds in the desert.",
+      "rank": 25,
+      "source": "ngsl"
+    },
+    {
+      "id": "round",
+      "word": "round",
+      "pos": "noun",
+      "he": "סבב, עגול",
+      "example": "After the first round of interviews, only ten candidates remained.",
+      "rank": 26,
+      "source": "ngsl"
+    },
+    {
+      "id": "opportunity",
+      "word": "opportunity",
+      "pos": "noun",
+      "he": "הזדמנות",
+      "example": "The program gives young people the opportunity to study abroad.",
+      "rank": 27,
+      "source": "ngsl"
+    },
+    {
+      "id": "domain",
+      "word": "domain",
+      "pos": "noun",
+      "he": "תחום, שטח",
+      "example": "Memory research is an important domain within psychology.",
+      "rank": 28,
+      "source": "nawl"
+    },
+    {
+      "id": "road",
+      "word": "road",
+      "pos": "noun",
+      "he": "כביש, דרך",
+      "example": "The new road reduced travel time between the two cities.",
+      "rank": 29,
+      "source": "ngsl"
+    },
+    {
+      "id": "accord",
+      "word": "accord",
+      "pos": "noun",
+      "he": "הסכם, התאמה",
+      "example": "The two countries signed a peace accord after years of negotiation.",
+      "rank": 30,
+      "source": "ngsl"
+    },
+    {
+      "id": "publish",
+      "word": "publish",
+      "pos": "verb",
+      "he": "לפרסם, להוציא לאור",
+      "example": "The results were published in a leading medical journal.",
+      "rank": 31,
+      "source": "nawl"
+    },
+    {
+      "id": "list",
+      "word": "list",
+      "pos": "noun",
+      "he": "רשימה",
+      "example": "The list of required books is available on the course website.",
+      "rank": 32,
+      "source": "ngsl"
+    },
+    {
+      "id": "wish",
+      "word": "wish",
+      "pos": "verb",
+      "he": "לרצות, לאחל, משאלה",
+      "example": "Students who wish to apply must submit their forms by May.",
+      "rank": 33,
+      "source": "ngsl"
+    },
+    {
+      "id": "therefore",
+      "word": "therefore",
+      "pos": "adv",
+      "he": "לכן, משום כך",
+      "example": "The sample was small; therefore, the results should be read with caution.",
+      "rank": 34,
+      "source": "ngsl"
+    },
+    {
+      "id": "denote",
+      "word": "denote",
+      "pos": "verb",
+      "he": "לציין, לסמן, להורות על",
+      "example": "In the chart, the red line denotes the average annual temperature.",
+      "rank": 35,
+      "source": "nawl"
+    },
+    {
+      "id": "wear",
+      "word": "wear",
+      "pos": "verb",
+      "he": "ללבוש, להרכיב, להישחק",
+      "example": "Workers must wear protective glasses in the laboratory.",
+      "rank": 36,
+      "source": "ngsl"
+    },
+    {
+      "id": "fund",
+      "word": "fund",
+      "pos": "noun",
+      "he": "קרן, כספים, לממן",
+      "example": "The fund supports research on renewable energy.",
+      "rank": 37,
+      "source": "ngsl"
+    },
+    {
+      "id": "rest",
+      "word": "rest",
+      "pos": "noun",
+      "he": "השאר, מנוחה",
+      "example": "Half of the participants slept normally, and the rest stayed awake.",
+      "rank": 38,
+      "source": "ngsl"
+    },
+    {
+      "id": "authority",
+      "word": "authority",
+      "pos": "noun",
+      "he": "רשות, סמכות, מומחה",
+      "example": "Local authorities closed the beach after the storm.",
+      "rank": 39,
+      "source": "nawl"
+    },
+    {
+      "id": "kid",
+      "word": "kid",
+      "pos": "noun",
+      "he": "ילד",
+      "example": "Kids who read at home often do better at school.",
+      "rank": 40,
+      "source": "ngsl"
+    },
+    {
+      "id": "industry",
+      "word": "industry",
+      "pos": "noun",
+      "he": "תעשייה, ענף",
+      "example": "The tourism industry suffered greatly during the pandemic.",
+      "rank": 41,
+      "source": "ngsl"
+    },
+    {
+      "id": "semantic",
+      "word": "semantic",
+      "pos": "adj",
+      "he": "סמנטי, של משמעות",
+      "example": "The two words differ in form but share a semantic link.",
+      "rank": 42,
+      "source": "nawl"
+    },
+    {
+      "id": "education",
+      "word": "education",
+      "pos": "noun",
+      "he": "חינוך, השכלה",
+      "example": "Access to higher education has grown rapidly in recent decades.",
+      "rank": 43,
+      "source": "ngsl"
+    },
+    {
+      "id": "measure",
+      "word": "measure",
+      "pos": "verb",
+      "he": "למדוד, אמצעי, צעד",
+      "example": "Scientists measure air pollution at several points in the city.",
+      "rank": 44,
+      "source": "ngsl"
+    },
+    {
+      "id": "kill",
+      "word": "kill",
+      "pos": "verb",
+      "he": "להרוג, להמית",
+      "example": "The disease killed millions of people in the fourteenth century.",
+      "rank": 45,
+      "source": "ngsl"
+    },
+    {
+      "id": "linear",
+      "word": "linear",
+      "pos": "adj",
+      "he": "לינארי, קווי",
+      "example": "The story is not told in a linear way but jumps between periods.",
+      "rank": 46,
+      "source": "nawl"
+    },
+    {
+      "id": "serve",
+      "word": "serve",
+      "pos": "verb",
+      "he": "לשמש, לשרת, להגיש",
+      "example": "The old factory now serves as a community art center.",
+      "rank": 47,
+      "source": "ngsl"
+    },
+    {
+      "id": "likely",
+      "word": "likely",
+      "pos": "adj",
+      "he": "סביר, צפוי",
+      "example": "Smokers are more likely to develop heart disease.",
+      "rank": 48,
+      "source": "ngsl"
+    },
+    {
+      "id": "certainly",
+      "word": "certainly",
+      "pos": "adv",
+      "he": "בהחלט, בוודאות",
+      "example": "The new policy will certainly affect how schools are funded.",
+      "rank": 49,
+      "source": "ngsl"
+    },
+    {
+      "id": "cognitive",
+      "word": "cognitive",
+      "pos": "adj",
+      "he": "קוגניטיבי, הכרתי",
+      "example": "Sleep loss can harm cognitive functions such as attention and memory.",
+      "rank": 50,
+      "source": "nawl"
+    },
+    {
+      "id": "national",
+      "word": "national",
+      "pos": "adj",
+      "he": "לאומי, ארצי",
+      "example": "The national election is held every four years.",
+      "rank": 51,
+      "source": "ngsl"
+    },
+    {
+      "id": "itself",
+      "word": "itself",
+      "pos": "pron",
+      "he": "עצמו, עצמה",
+      "example": "The city itself is small, but its suburbs are huge.",
+      "rank": 52,
+      "source": "ngsl"
+    },
+    {
+      "id": "graph",
+      "word": "graph",
+      "pos": "noun",
+      "he": "גרף, תרשים",
+      "example": "The graph shows a steady rise in prices since 2010.",
+      "rank": 53,
+      "source": "nawl"
+    },
+    {
+      "id": "teach",
+      "word": "teach",
+      "pos": "verb",
+      "he": "ללמד",
+      "example": "Teachers can teach critical thinking through simple daily tasks.",
+      "rank": 54,
+      "source": "ngsl"
+    },
+    {
+      "id": "field",
+      "word": "field",
+      "pos": "noun",
+      "he": "תחום, שדה",
+      "example": "She is a leading expert in the field of genetics.",
+      "rank": 55,
+      "source": "ngsl"
+    },
+    {
+      "id": "security",
+      "word": "security",
+      "pos": "noun",
+      "he": "ביטחון, אבטחה",
+      "example": "The company invested heavily in computer security.",
+      "rank": 56,
+      "source": "ngsl"
+    },
+    {
+      "id": "correlation",
+      "word": "correlation",
+      "pos": "noun",
+      "he": "מתאם, קשר הדדי",
+      "example": "The researchers found a strong correlation between income and health.",
+      "rank": 57,
+      "source": "nawl"
+    },
+    {
+      "id": "air",
+      "word": "air",
+      "pos": "noun",
+      "he": "אוויר",
+      "example": "Trees help clean the air in crowded cities.",
+      "rank": 58,
+      "source": "ngsl"
+    },
+    {
+      "id": "benefit",
+      "word": "benefit",
+      "pos": "noun",
+      "he": "תועלת, יתרון, להועיל",
+      "example": "The benefits of regular exercise are well documented.",
+      "rank": 59,
+      "source": "ngsl"
+    },
+    {
+      "id": "linguistic",
+      "word": "linguistic",
+      "pos": "adj",
+      "he": "לשוני, בלשני",
+      "example": "Children develop linguistic skills very quickly in their first years.",
+      "rank": 60,
+      "source": "nawl"
+    },
+    {
+      "id": "trade",
+      "word": "trade",
+      "pos": "noun",
+      "he": "סחר, מסחר, מקצוע",
+      "example": "Trade between the two countries doubled after the agreement.",
+      "rank": 61,
+      "source": "ngsl"
+    },
+    {
+      "id": "risk",
+      "word": "risk",
+      "pos": "noun",
+      "he": "סיכון, סכנה",
+      "example": "A poor diet increases the risk of several serious illnesses.",
+      "rank": 62,
+      "source": "ngsl"
+    },
+    {
+      "id": "news",
+      "word": "news",
+      "pos": "noun",
+      "he": "חדשות, ידיעה",
+      "example": "Most young people now get their news from social media.",
+      "rank": 63,
+      "source": "ngsl"
+    },
+    {
+      "id": "acid",
+      "word": "acid",
+      "pos": "noun",
+      "he": "חומצה",
+      "example": "Acid rain can damage forests and lakes.",
+      "rank": 64,
+      "source": "nawl"
+    },
+    {
+      "id": "standard",
+      "word": "standard",
+      "pos": "noun",
+      "he": "תקן, רמה, סטנדרט",
+      "example": "The new building meets the highest safety standards.",
+      "rank": 65,
+      "source": "ngsl"
+    },
+    {
+      "id": "vote",
+      "word": "vote",
+      "pos": "verb",
+      "he": "להצביע, הצבעה",
+      "example": "Only half of the citizens voted in the last election.",
+      "rank": 66,
+      "source": "ngsl"
+    },
+    {
+      "id": "percent",
+      "word": "percent",
+      "pos": "noun",
+      "he": "אחוז",
+      "example": "About forty percent of the students passed the exam.",
+      "rank": 67,
+      "source": "ngsl"
+    },
+    {
+      "id": "induce",
+      "word": "induce",
+      "pos": "verb",
+      "he": "לגרום ל-, לעורר, לשכנע",
+      "example": "Certain medicines can induce sleep in patients.",
+      "rank": 68,
+      "source": "nawl"
+    },
+    {
+      "id": "focus",
+      "word": "focus",
+      "pos": "verb",
+      "he": "להתמקד, מוקד",
+      "example": "The course focuses on writing clear academic texts.",
+      "rank": 69,
+      "source": "ngsl"
+    },
+    {
+      "id": "stage",
+      "word": "stage",
+      "pos": "noun",
+      "he": "שלב, במה",
+      "example": "At this stage of the research, the results are still uncertain.",
+      "rank": 70,
+      "source": "ngsl"
+    },
+    {
+      "id": "velocity",
+      "word": "velocity",
+      "pos": "noun",
+      "he": "מהירות",
+      "example": "The velocity of the river increases after heavy rain.",
+      "rank": 71,
+      "source": "nawl"
+    },
+    {
+      "id": "space",
+      "word": "space",
+      "pos": "noun",
+      "he": "מרחב, מקום, חלל",
+      "example": "The new library provides quiet space for students to study.",
+      "rank": 72,
+      "source": "ngsl"
+    },
+    {
+      "id": "instead",
+      "word": "instead",
+      "pos": "adv",
+      "he": "במקום זאת, במקום",
+      "example": "Instead of driving, many workers now take the train.",
+      "rank": 73,
+      "source": "ngsl"
+    },
+    {
+      "id": "realize",
+      "word": "realize",
+      "pos": "verb",
+      "he": "להבין, להיווכח, להגשים",
+      "example": "Few people realize how much water is used to produce food.",
+      "rank": 74,
+      "source": "ngsl"
+    },
+    {
+      "id": "interval",
+      "word": "interval",
+      "pos": "noun",
+      "he": "מרווח, פרק זמן, הפסקה",
+      "example": "Blood samples were taken at regular intervals.",
+      "rank": 75,
+      "source": "nawl"
+    },
+    {
+      "id": "usually",
+      "word": "usually",
+      "pos": "adv",
+      "he": "בדרך כלל",
+      "example": "Symptoms usually appear within a few days.",
+      "rank": 76,
+      "source": "ngsl"
+    },
+    {
+      "id": "data",
+      "word": "data",
+      "pos": "noun",
+      "he": "נתונים",
+      "example": "The data were collected over a period of five years.",
+      "rank": 77,
+      "source": "ngsl"
+    },
+    {
+      "id": "single",
+      "word": "single",
+      "pos": "adj",
+      "he": "יחיד, בודד, רווק",
+      "example": "A single mistake can ruin the entire experiment.",
+      "rank": 78,
+      "source": "ngsl"
+    },
+    {
+      "id": "discourse",
+      "word": "discourse",
+      "pos": "noun",
+      "he": "שיח, דיון",
+      "example": "Political discourse has become more aggressive in recent years.",
+      "rank": 79,
+      "source": "nawl"
+    },
+    {
+      "id": "address",
+      "word": "address",
+      "pos": "verb",
+      "he": "לטפל ב-, לפנות אל, כתובת",
+      "example": "The report addresses the problem of youth unemployment.",
+      "rank": 80,
+      "source": "ngsl"
+    },
+    {
+      "id": "performance",
+      "word": "performance",
+      "pos": "noun",
+      "he": "ביצוע, תפקוד, הופעה",
+      "example": "Student performance improved after the new teaching method was introduced.",
+      "rank": 81,
+      "source": "ngsl"
+    },
+    {
+      "id": "finite",
+      "word": "finite",
+      "pos": "adj",
+      "he": "סופי, מוגבל",
+      "example": "Oil is a finite resource that will eventually run out.",
+      "rank": 82,
+      "source": "nawl"
+    },
+    {
+      "id": "chance",
+      "word": "chance",
+      "pos": "noun",
+      "he": "סיכוי, הזדמנות, מקרה",
+      "example": "Early treatment increases the chance of full recovery.",
+      "rank": 83,
+      "source": "ngsl"
+    },
+    {
+      "id": "accept",
+      "word": "accept",
+      "pos": "verb",
+      "he": "לקבל, להסכים",
+      "example": "Most scientists accept the theory of evolution.",
+      "rank": 84,
+      "source": "ngsl"
+    },
+    {
+      "id": "society",
+      "word": "society",
+      "pos": "noun",
+      "he": "חברה",
+      "example": "Technology has changed the way society communicates.",
+      "rank": 85,
+      "source": "ngsl"
+    },
+    {
+      "id": "stimulus",
+      "word": "stimulus",
+      "pos": "noun",
+      "he": "גירוי, תמריץ",
+      "example": "Participants reacted quickly to each visual stimulus.",
+      "rank": 86,
+      "source": "nawl"
+    },
+    {
+      "id": "technology",
+      "word": "technology",
+      "pos": "noun",
+      "he": "טכנולוגיה",
+      "example": "New technology has made solar power much cheaper.",
+      "rank": 87,
+      "source": "ngsl"
+    },
+    {
+      "id": "mention",
+      "word": "mention",
+      "pos": "verb",
+      "he": "להזכיר, לציין",
+      "example": "The article mentions several earlier studies on the topic.",
+      "rank": 88,
+      "source": "ngsl"
+    },
+    {
+      "id": "choice",
+      "word": "choice",
+      "pos": "noun",
+      "he": "בחירה, אפשרות",
+      "example": "Consumers today have a wide choice of products.",
+      "rank": 89,
+      "source": "ngsl"
+    },
+    {
+      "id": "electron",
+      "word": "electron",
+      "pos": "noun",
+      "he": "אלקטרון",
+      "example": "An electron carries a negative electric charge.",
+      "rank": 90,
+      "source": "nawl"
+    },
+    {
+      "id": "save",
+      "word": "save",
+      "pos": "verb",
+      "he": "לחסוך, להציל, לשמור",
+      "example": "The new system saves both time and money.",
+      "rank": 91,
+      "source": "ngsl"
+    },
+    {
+      "id": "common",
+      "word": "common",
+      "pos": "adj",
+      "he": "נפוץ, משותף, רגיל",
+      "example": "Back pain is one of the most common health problems.",
+      "rank": 92,
+      "source": "ngsl"
+    },
+    {
+      "id": "algorithm",
+      "word": "algorithm",
+      "pos": "noun",
+      "he": "אלגוריתם",
+      "example": "The search engine uses a complex algorithm to rank web pages.",
+      "rank": 93,
+      "source": "nawl"
+    },
+    {
+      "id": "culture",
+      "word": "culture",
+      "pos": "noun",
+      "he": "תרבות",
+      "example": "Food plays a central role in every culture.",
+      "rank": 94,
+      "source": "ngsl"
+    },
+    {
+      "id": "total",
+      "word": "total",
+      "pos": "adj",
+      "he": "כולל, מוחלט, סך הכול",
+      "example": "The total cost of the project was higher than expected.",
+      "rank": 95,
+      "source": "ngsl"
+    },
+    {
+      "id": "demand",
+      "word": "demand",
+      "pos": "noun",
+      "he": "ביקוש, דרישה",
+      "example": "Demand for electric cars has risen sharply.",
+      "rank": 96,
+      "source": "ngsl"
+    },
+    {
+      "id": "fluid",
+      "word": "fluid",
+      "pos": "noun",
+      "he": "נוזל, גמיש",
+      "example": "Patients with a fever should drink plenty of fluids.",
+      "rank": 97,
+      "source": "nawl"
+    },
+    {
+      "id": "material",
+      "word": "material",
+      "pos": "noun",
+      "he": "חומר",
+      "example": "The bridge was built from local materials.",
+      "rank": 98,
+      "source": "ngsl"
+    },
+    {
+      "id": "limit",
+      "word": "limit",
+      "pos": "noun",
+      "he": "גבול, הגבלה, להגביל",
+      "example": "The law sets a limit on how much companies can pollute.",
+      "rank": 99,
+      "source": "ngsl"
+    },
+    {
+      "id": "developmental",
+      "word": "developmental",
+      "pos": "adj",
+      "he": "התפתחותי",
+      "example": "Developmental psychology studies how people change across their lives.",
+      "rank": 100,
+      "source": "nawl"
+    }
+  ]
+}
