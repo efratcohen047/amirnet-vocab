@@ -113,13 +113,13 @@ that never touch progress.
 appears in the app without code changes; a changed translation keeps the word's box
 (quickstart step 10).
 
-- [ ] T030 [US2] Draft ranks 101–200 into `data/words.json` (same rules as T016); `npm test` passes
-- [ ] T031 [US2] Draft ranks 201–300 into `data/words.json`; `npm test` passes
-- [ ] T032 [US2] Draft ranks 301–400 into `data/words.json`; `npm test` passes
-- [ ] T033 [US2] Draft ranks 401–500 into `data/words.json`; `npm test` passes
-- [ ] T034 [US2] Raise the minimum entry count in `tests/data/words.test.ts` from 100 to 500 (SC-005)
-- [ ] T035 [P] [US2] Add FR-007 cases to `tests/core/session.test.ts`: a progress record whose id is missing from `words` is ignored by `buildSession`; words appended at higher ranks are introduced after existing ones; editing a word's `he` does not change its progress
-- [ ] T036 [P] [US2] Expand `README.md` (started in T005): what the app is and who it's for; run locally (`npm install`, `npm run dev`, `npm test`); deploy (push to `main` → GitHub Actions → Pages; URL); content workflow (add a batch, fix a translation from a flag export, edit `data/sources/nawl_excluded.txt` and run `npm run build:ranked`, never change an `id`); attribution with both citations from research R1 and a link to CC BY-SA 4.0; licences (code MIT in `LICENSE`, data CC BY-SA 4.0 in `data/LICENSE`)
+- [X] T030 [US2] Draft ranks 101–200 into `data/words.json` (same rules as T016); `npm test` passes
+- [X] T031 [US2] Draft ranks 201–300 into `data/words.json`; `npm test` passes
+- [X] T032 [US2] Draft ranks 301–400 into `data/words.json`; `npm test` passes
+- [X] T033 [US2] Draft ranks 401–500 into `data/words.json`; `npm test` passes
+- [X] T034 [US2] Raise the minimum entry count in `tests/data/words.test.ts` from 100 to 500 (SC-005)
+- [X] T035 [P] [US2] Add FR-007 cases to `tests/core/session.test.ts`: a progress record whose id is missing from `words` is ignored by `buildSession`; words appended at higher ranks are introduced after existing ones; editing a word's `he` does not change its progress
+- [X] T036 [P] [US2] Expand `README.md` (started in T005): what the app is and who it's for; run locally (`npm install`, `npm run dev`, `npm test`); deploy (push to `main` → GitHub Actions → Pages; URL); content workflow (add a batch, fix a translation from a flag export, edit `data/sources/nawl_excluded.txt` and run `npm run build:ranked`, never change an `id`); attribution with both citations from research R1 and a link to CC BY-SA 4.0; licences (code MIT in `LICENSE`, data CC BY-SA 4.0 in `data/LICENSE`)
 - [ ] T037 [US2] **Deploy**: merge into `main`, push, then check on the phone that 500 words are loaded and existing progress is intact
 
 **Checkpoint**: Release 1 content complete (500 words)

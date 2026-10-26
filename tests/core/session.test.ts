@@ -175,6 +175,34 @@ describe('answer', () => {
   });
 });
 
+describe('content updates never touch progress (FR-007)', () => {
+  it('ignores a progress record whose word was removed from the data file', () => {
+    const words = makeWords(3);
+    const progress: ProgressMap = { gone: prog(1, '2026-10-01'), w1: prog(2, '2026-10-20') };
+    const s = buildSession(words, progress, settings, TODAY, NOW);
+    expect(ids(s)).toEqual(['review:w1', 'new:w2', 'new:w3']);
+  });
+
+  it('introduces words from a new batch after the existing ones', () => {
+    const firstBatch = makeWords(3);
+    const progress: ProgressMap = { w1: prog(2, '2026-10-30'), w2: prog(2, '2026-10-30') };
+    const withBatch = makeWords(6); // ranks 4-6 appended
+    const s = buildSession(withBatch, progress, settings, TODAY, NOW);
+    expect(ids(s)).toEqual(['new:w3', 'new:w4', 'new:w5']);
+    expect(buildSession(firstBatch, progress, settings, TODAY, NOW).cards.map((c) => c.id)).toEqual(['w3']);
+  });
+
+  it('keeps a word\'s box and due date when its translation is corrected', () => {
+    const words = makeWords(2);
+    const progress: ProgressMap = { w1: prog(3, TODAY) };
+    const corrected = words.map((w) => (w.id === 'w1' ? { ...w, he: 'תרגום מתוקן' } : w));
+    const before = buildSession(words, progress, settings, TODAY, NOW);
+    const after = buildSession(corrected, progress, settings, TODAY, NOW);
+    expect(after.cards).toEqual(before.cards);
+    expect(answer({ session: after, progress, history: {} }, 'knew', ctx(corrected)).progress.w1.box).toBe(4);
+  });
+});
+
 describe('skip', () => {
   it('advances without scheduling and completes the day on the last card', () => {
     const words = makeWords(2);

@@ -4,7 +4,7 @@ import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 import type { Word, WordData } from '../../src/types';
 
-const MIN_ENTRIES = 100;
+const MIN_ENTRIES = 500; // SC-005: release 1 ships at least 500 words
 const MAX_EXAMPLE_LENGTH = 160;
 const POS = new Set(['noun', 'verb', 'adj', 'adv', 'prep', 'conj', 'pron', 'det', 'other']);
 const HEBREW_LETTER = /[א-ת]/;
