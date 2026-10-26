@@ -13,6 +13,7 @@ import Home, { type HomeStatus } from './screens/Home';
 import Progress from './screens/Progress';
 import Session from './screens/Session';
 import Settings from './screens/Settings';
+import { addFlag, flagsToCsv, pruneResolved, removeFlag } from './core/flags';
 import { counts, finishDate, pace, streak, usesTargetPace } from './core/stats';
 import { store } from './storage';
 import { getToday } from './today';
@@ -44,7 +45,13 @@ export default function App() {
   const [history, setHistory] = usePersisted<History>(store.loadHistory, store.saveHistory);
   const [settings, setSettings] = usePersisted<SettingsT>(store.loadSettings, store.saveSettings);
   const [flags, setFlags] = usePersisted<FlagMap>(store.loadFlags, store.saveFlags);
-  void flags, setFlags; // Used by flagging (US4).
+
+  // Flags whose translation the owner has since fixed close themselves (FR-022a).
+  useEffect(() => {
+    const open = pruneResolved(flags, wordById);
+    if (Object.keys(open).length !== Object.keys(flags).length) setFlags(open);
+    // Runs once on load: a new word list only arrives with a new app version.
+  }, []);
 
   // Re-render when she comes back to the app, so "today" moves on after midnight.
   const [, refresh] = useReducer((n: number) => n + 1, 0);
@@ -111,6 +118,9 @@ export default function App() {
             onAnswer={onAnswer}
             onSkip={onSkip}
             onDone={() => setView('home')}
+            isFlagged={(id) => id in flags}
+            onFlag={(word, note) => setFlags(addFlag(flags, word, note, now()))}
+            onUnflag={(id) => setFlags(removeFlag(flags, id))}
           />
         </main>
       </div>
@@ -130,7 +140,15 @@ export default function App() {
           />
         )}
         {view === 'progress' && renderProgress()}
-        {view === 'settings' && <Settings settings={settings} onChange={setSettings} />}
+        {view === 'settings' && (
+          <Settings
+            settings={settings}
+            onChange={setSettings}
+            flagCount={Object.keys(flags).length}
+            exportFlags={() => flagsToCsv(flags, wordById)}
+            today={today}
+          />
+        )}
       </main>
       <nav className="nav">
         {NAV.map((n) => (

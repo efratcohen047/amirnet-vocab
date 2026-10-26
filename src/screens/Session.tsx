@@ -22,9 +22,12 @@ interface Props {
   /** Moves past a card whose word is no longer in the data file, without scheduling it. */
   onSkip: () => void;
   onDone: () => void;
+  isFlagged: (id: string) => boolean;
+  onFlag: (word: Word, note: string) => void;
+  onUnflag: (id: string) => void;
 }
 
-export default function Session({ session, wordById, onAnswer, onSkip, onDone }: Props) {
+export default function Session({ session, wordById, onAnswer, onSkip, onDone, isFlagged, onFlag, onUnflag }: Props) {
   // Reveal state belongs to one card; keyed by position so it resets on the next card.
   const [revealedAt, setRevealedAt] = useState<number | null>(null);
   const revealed = revealedAt === session.position;
@@ -78,6 +81,15 @@ export default function Session({ session, wordById, onAnswer, onSkip, onDone }:
         )}
       </button>
 
+      {revealed && (
+        <FlagControl
+          key={session.position}
+          flagged={isFlagged(word.id)}
+          onFlag={(note) => onFlag(word, note)}
+          onUnflag={() => onUnflag(word.id)}
+        />
+      )}
+
       <div className="actions">
         {revealed ? (
           <>
@@ -97,6 +109,67 @@ export default function Session({ session, wordById, onAnswer, onSkip, onDone }:
         )}
       </div>
     </section>
+  );
+}
+
+/** "Wrong translation" report for the revealed card (FR-021). Never blocks studying. */
+function FlagControl({
+  flagged,
+  onFlag,
+  onUnflag,
+}: {
+  flagged: boolean;
+  onFlag: (note: string) => void;
+  onUnflag: () => void;
+}) {
+  const [noting, setNoting] = useState(false);
+  const [note, setNote] = useState('');
+
+  if (flagged) {
+    return (
+      <button className="flag flagged" onClick={onUnflag}>
+        דווח ✓ (הקישי לביטול)
+      </button>
+    );
+  }
+  if (!noting) {
+    return (
+      <button className="flag" onClick={() => setNoting(true)}>
+        תרגום שגוי?
+      </button>
+    );
+  }
+  return (
+    <div className="flag-form">
+      <textarea
+        value={note}
+        onChange={(e) => setNote(e.target.value)}
+        placeholder="מה התרגום הנכון? (לא חובה)"
+        rows={2}
+        maxLength={300}
+      />
+      <div className="flag-buttons">
+        <button
+          className="secondary"
+          onClick={() => {
+            onFlag(note);
+            setNote('');
+            setNoting(false);
+          }}
+        >
+          שליחת דיווח
+        </button>
+        <button
+          className="link"
+          onClick={() => {
+            setNote('');
+            setNoting(false);
+          }}
+        >
+          ביטול
+        </button>
+      </div>
+    </div>
   );
 }
 

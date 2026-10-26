@@ -358,3 +358,45 @@ h2 {
 .progress h2 {
   margin-block-start: 24px;
 }
+
+/* Flags */
+.flag {
+  align-self: center;
+  min-block-size: 44px;
+  padding-inline: 16px;
+  border: 0;
+  border-radius: 12px;
+  background: transparent;
+  color: var(--muted);
+  text-decoration: underline;
+}
+
+.flag.flagged {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.flag-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.flag-form textarea {
+  font: inherit;
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--bg);
+  color: var(--fg);
+}
+
+.flag-buttons {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.primary:disabled {
+  opacity: 0.5;
+}

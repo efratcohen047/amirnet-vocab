@@ -120,7 +120,7 @@ appears in the app without code changes; a changed translation keeps the word's 
 - [X] T034 [US2] Raise the minimum entry count in `tests/data/words.test.ts` from 100 to 500 (SC-005)
 - [X] T035 [P] [US2] Add FR-007 cases to `tests/core/session.test.ts`: a progress record whose id is missing from `words` is ignored by `buildSession`; words appended at higher ranks are introduced after existing ones; editing a word's `he` does not change its progress
 - [X] T036 [P] [US2] Expand `README.md` (started in T005): what the app is and who it's for; run locally (`npm install`, `npm run dev`, `npm test`); deploy (push to `main` → GitHub Actions → Pages; URL); content workflow (add a batch, fix a translation from a flag export, edit `data/sources/nawl_excluded.txt` and run `npm run build:ranked`, never change an `id`); attribution with both citations from research R1 and a link to CC BY-SA 4.0; licences (code MIT in `LICENSE`, data CC BY-SA 4.0 in `data/LICENSE`)
-- [ ] T037 [US2] **Deploy**: merge into `main`, push, then check on the phone that 500 words are loaded and existing progress is intact
+- [X] T037 [US2] **Deploy**: merge into `main`, push, then check on the phone that 500 words are loaded and existing progress is intact
 
 **Checkpoint**: Release 1 content complete (500 words)
 
@@ -157,14 +157,14 @@ hand calculation (quickstart step 8, SC-006).
 
 ### Tests for User Story 4 ⚠️ write first, must fail
 
-- [ ] T043 [P] [US4] Write `tests/core/flags.test.ts` per [contracts/flag-export.md](contracts/flag-export.md): header and column order; RFC 4180 quoting of `,`, `"` and newlines; rows ordered oldest first; `addFlag` stores `shownTranslation` at flag time; `removeFlag` deletes it; `pruneResolved(flags, wordById)` drops a flag when its word is no longer in the data file or the word's current `he` differs from `shownTranslation`, and keeps it when `he` is unchanged
+- [X] T043 [P] [US4] Write `tests/core/flags.test.ts` per [contracts/flag-export.md](contracts/flag-export.md): header and column order; RFC 4180 quoting of `,`, `"` and newlines; rows ordered oldest first; `addFlag` stores `shownTranslation` at flag time; `removeFlag` deletes it; `pruneResolved(flags, wordById)` drops a flag when its word is no longer in the data file or the word's current `he` differs from `shownTranslation`, and keeps it when `he` is unchanged
 
 ### Implementation for User Story 4
 
-- [ ] T044 [US4] Implement `src/core/flags.ts`: `addFlag(flags, word, note, now)`, `removeFlag(flags, id)`, `pruneResolved(flags, wordById)`, `flagsToCsv(flags, wordById)` (depends on T043). Make T043 pass. In `src/App.tsx`, run `pruneResolved` once on load and save the result, so a fixed translation closes its flag automatically (FR-022a)
-- [ ] T045 [P] [US4] In `src/screens/Session.tsx`, add a small "תרגום שגוי" button on the revealed card. It opens an inline optional note field with save/cancel; once flagged, it shows "דווח ✓" and tapping removes the flag. Studying is never blocked, and the flag is saved immediately through the App setter
-- [ ] T046 [P] [US4] In `src/screens/Settings.tsx`, add a "דיווחי תרגום" section: the count of open flags and an export button that runs `navigator.share({ title: 'Amirnet flags YYYY-MM-DD', text: csv })` when available, otherwise copies to the clipboard and downloads `amirnet-flags-YYYY-MM-DD.csv` via a Blob link. With no flags, the button is disabled and shows "אין דיווחים"
-- [ ] T047 [US4] **Deploy**: merge into `main`, push; check quickstart step 9 on the phone
+- [X] T044 [US4] Implement `src/core/flags.ts`: `addFlag(flags, word, note, now)`, `removeFlag(flags, id)`, `pruneResolved(flags, wordById)`, `flagsToCsv(flags, wordById)` (depends on T043). Make T043 pass. In `src/App.tsx`, run `pruneResolved` once on load and save the result, so a fixed translation closes its flag automatically (FR-022a)
+- [X] T045 [P] [US4] In `src/screens/Session.tsx`, add a small "תרגום שגוי" button on the revealed card. It opens an inline optional note field with save/cancel; once flagged, it shows "דווח ✓" and tapping removes the flag. Studying is never blocked, and the flag is saved immediately through the App setter
+- [X] T046 [P] [US4] In `src/screens/Settings.tsx`, add a "דיווחי תרגום" section: the count of open flags and an export button that runs `navigator.share({ title: 'Amirnet flags YYYY-MM-DD', text: csv })` when available, otherwise copies to the clipboard and downloads `amirnet-flags-YYYY-MM-DD.csv` via a Blob link. With no flags, the button is disabled and shows "אין דיווחים"
+- [X] T047 [US4] **Deploy**: merge into `main`, push; check quickstart step 9 on the phone
 
 **Checkpoint**: All four user stories complete
 
@@ -172,9 +172,10 @@ hand calculation (quickstart step 8, SC-006).
 
 ## Phase 7: Polish & Cross-Cutting Concerns
 
-- [ ] T048 [P] Privacy check (SC-008, FR-028): after `npm run build`, `grep -rnE "sendBeacon|WebSocket|XMLHttpRequest|<script[^>]+src=\"https?://|<link[^>]+href=\"https?://" dist/` finds nothing. Plain URL strings such as React's `react.dev/errors` links are message text, not requests, so they are not a finding. Then in `npm run preview` with DevTools → Network, a full session plus a flag export makes requests only to the app's own origin. No fonts, CDNs or analytics
-- [ ] T049 [P] Run `npm run typecheck` and fix every error; remove leftover placeholder code and unused exports
+- [X] T048 [P] Privacy check (SC-008, FR-028): after `npm run build`, `grep -rnE "sendBeacon|WebSocket|XMLHttpRequest|<script[^>]+src=\"https?://|<link[^>]+href=\"https?://" dist/` finds nothing. Plain URL strings such as React's `react.dev/errors` links are message text, not requests, so they are not a finding. Then in `npm run preview` with DevTools → Network, a full session plus a flag export makes requests only to the app's own origin. No fonts, CDNs or analytics
+- [X] T049 [P] Run `npm run typecheck` and fix every error; remove leftover placeholder code and unused exports
 - [ ] T050 Run the full quickstart.md manual validation (steps 1–11) on her phone. Record pass/fail per step in `specs/001-vocab-mvp/checklists/validation.md`, and fix any failure before the final merge
+  - *Status 2026-10-26*: steps 2–5 and 7–11 verified in headless Chrome against the live site (see validation.md). The phone-only checks (install, airplane mode + restart, 15-minute timing, real share sheet) are still open for the owner
 - [ ] T051 Final **Deploy**: merge `001-vocab-mvp` into `main`, push, confirm the workflow is green and the live URL serves the final build
 
 ---
