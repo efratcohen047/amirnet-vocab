@@ -6,3 +6,8 @@ node_modules/
 dist/
 *.sqlite
 *.db
+build/
+coverage/
+*.tmp
+*.swp
+Thumbs.db

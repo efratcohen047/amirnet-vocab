@@ -1,0 +1,16 @@
+The word data in this directory (data/) is adapted from:
+
+- The New General Service List (NGSL) 1.2
+- The New Academic Word List (NAWL) 1.2
+
+by Charles Browne, Brent Culligan and Joseph Phillips, https://www.newgeneralservicelist.com,
+licensed under the Creative Commons Attribution-ShareAlike 4.0 International License.
+
+Changes: the 500 most frequent NGSL words and 81 technical NAWL terms were removed, the two
+lists were merged into one ranked list, and Hebrew translations, parts of speech and example
+sentences were added.
+
+The adapted data is licensed under the same Creative Commons Attribution-ShareAlike 4.0
+International License: https://creativecommons.org/licenses/by-sa/4.0/
+
+This license applies only to the data. The app code is under the MIT License (../LICENSE).
