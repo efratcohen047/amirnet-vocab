@@ -176,7 +176,7 @@ hand calculation (quickstart step 8, SC-006).
 - [X] T049 [P] Run `npm run typecheck` and fix every error; remove leftover placeholder code and unused exports
 - [ ] T050 Run the full quickstart.md manual validation (steps 1–11) on her phone. Record pass/fail per step in `specs/001-vocab-mvp/checklists/validation.md`, and fix any failure before the final merge
   - *Status 2026-10-26*: steps 2–5 and 7–11 verified in headless Chrome against the live site (see validation.md). The phone-only checks (install, airplane mode + restart, 15-minute timing, real share sheet) are still open for the owner
-- [ ] T051 Final **Deploy**: merge `001-vocab-mvp` into `main`, push, confirm the workflow is green and the live URL serves the final build
+- [X] T051 Final **Deploy**: merge `001-vocab-mvp` into `main`, push, confirm the workflow is green and the live URL serves the final build
 
 ---
 
