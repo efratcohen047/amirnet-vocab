@@ -167,22 +167,24 @@ three with the word, the shown translation, her note, and the date.
    optional note, date flagged) that can be saved or shared off the phone.
 4. **Given** the app is offline, **When** she flags a word, **Then** the flag is saved and
    is included in the next export.
+5. **Given** a flagged word whose translation the owner has since corrected and deployed,
+   **When** she next opens the app online, **Then** the flag is closed automatically and no
+   longer appears in exports.
 
 ---
 
 ### Edge Cases
 
 - **Missed days / review backlog**: If she skips several days, all overdue reviews become
-  due. If more than 100 reviews are due, today's session contains the 100 most urgent
-  (lowest box first, then most overdue) and no new words; the rest carry over to the next
-  day. This keeps a session within ~15 minutes.
+  due, and the cap in FR-016 keeps a session within ~15 minutes.
 - **Failed cards within a session**: A card rated "didn't know" is shown once more at the end
   of the same session. The second showing does not change its box or the accuracy summary.
 - **All loaded words introduced**: When every word currently in the list has been introduced,
   sessions contain only due reviews, and the home screen says no new words remain until the
   next batch. Progress and the finish date still count against the goal total (3,000, or the full list size if larger).
 - **Nothing due**: If no reviews are due and no new words remain, the home screen says so and
-  shows the next due date; this day does not break the streak.
+  shows the next due date; opening the app on such a day records a rest day, which does not
+  break the streak (FR-018).
 - **Day boundary**: "Today" follows the phone's local date. A session started before midnight
   and finished after midnight counts for the day it was started.
 - **Changed daily target**: Changing the new-words-per-day setting takes effect from the next
@@ -257,13 +259,16 @@ three with the word, the shown translation, her note, and the date.
   total, plus the number of words currently loaded. The goal total is 3,000 or the number of
   words in the list, whichever is larger. "New" includes words not loaded yet.
 - **FR-018**: The app MUST show a daily streak: consecutive calendar days, ending today or
-  yesterday, on which the daily session was completed. A day with nothing to study does not
-  break the streak.
+  yesterday, on which the daily session was completed. A "rest day" also does not break the
+  streak: a day on which she opened the app and there was nothing to study (no reviews due,
+  no new words left). A day on which the app was not opened breaks the streak unless the
+  session was completed.
 - **FR-019**: A "how much is left" view MUST show words not yet learned (goal total minus
-  learned) and an estimated date by which all goal-total words will have been introduced
-  (goal total minus words introduced, divided by the pace), based on the average number of new words
-  introduced per calendar day (including words marked "already know") over the last 14 days (or the daily target if fewer than 7
-  days of history exist).
+  learned) and an estimated date by which all goal-total words will be learned. The date is
+  computed as: today + (words not yet introduced ÷ pace) days + 13 days, where 13 days is the
+  shortest path from a new word to box 5 (2 + 4 + 7 days). Pace is the average number of new
+  words introduced per calendar day (including words marked "already know") over the last
+  14 days, or the daily target if fewer than 7 days of history exist.
 - **FR-020**: Streak and progress displays MUST NOT block or slow down starting a session.
 
 **Content quality**
@@ -271,6 +276,9 @@ three with the word, the shown translation, her note, and the date.
 - **FR-021**: On any revealed card, she MUST be able to flag "wrong translation", with an
   optional free-text note, and to remove the flag.
 - **FR-022**: Flags MUST be stored on the device and survive app restarts.
+- **FR-022a**: A flag MUST close automatically when the word's translation in the data file
+  no longer matches the translation she flagged, or the word was removed. Exports therefore
+  contain only flags the owner has not dealt with yet.
 - **FR-023**: The app MUST offer an export of all open flags in a readable format that can be
   saved or shared off the phone (fields as in Story 4, scenario 3).
 
@@ -326,12 +334,11 @@ three with the word, the shown translation, her note, and the date.
 
 ## Assumptions
 
-- **Source sizes**: NGSL has ~2,800 words and NAWL ~960. Excluding the top ~500 NGSL words
-  leaves roughly 3,200 words, which matches the ~3000 target. The exact exclusion cut-off
-  (500) can be tuned after the first weeks of use.
-- **Licensing**: Both lists are understood to be published under a Creative Commons
-  Attribution-ShareAlike license. If so, the derived word list must carry the same license
-  and attribution. This is verified during planning before any data is committed (FR-001).
+- **Source sizes**: NGSL has 2,809 words and NAWL 957. Excluding the top 500 NGSL words and
+  81 technical NAWL terms leaves 3,185 words, which matches the ~3000 target. The exclusion
+  cut-off (500) and the technical-term list can be tuned after the first weeks of use.
+- **Licensing**: Verified 2026-10-26 (research R1): both lists are CC BY-SA 4.0, so the
+  derived word list carries the same license and the README gives the required attribution.
 - **Content creation**: The source lists provide words and ranks only. Hebrew translations,
   parts of speech, and example sentences are AI-drafted for this project and released
   without a manual review (owner's decision, 2026-10-26). The "wrong translation" flag

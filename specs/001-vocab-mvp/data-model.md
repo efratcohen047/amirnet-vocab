@@ -111,7 +111,8 @@ The session is complete when `position === cards.length`.
 **Derived values**:
 
 - **Streak** (FR-018): consecutive days ending today (if completed or rest) or yesterday,
-  where each day is completed or rest.
+  where each day is completed or rest. A day with no history record breaks the streak (rest
+  days exist only when the app was opened that day).
 - **Summary accuracy** (FR-015): `knewCount / (newCount + reviewCount)`. Shown as "—" when
   the denominator is 0.
 - **Pace** (FR-019): sum of `newCount + knownCount` over the last 14 calendar days ÷ number
@@ -133,7 +134,9 @@ The session is complete when `position === cards.length`.
 | note | string | optional, may be empty |
 | flaggedAt | timestamp | |
 
-Removing a flag deletes the record. The export format is in
+Removing a flag deletes the record. On app load, `pruneResolved` deletes every flag whose
+word is no longer in `words.json` or whose current `he` differs from `shownTranslation`
+(the owner fixed it, FR-022a). The export format is in
 [contracts/flag-export.md](contracts/flag-export.md).
 
 ## Progress counts (FR-017, FR-019)
@@ -144,7 +147,10 @@ Removing a flag deletes the record. The export format is in
 - `loaded` = number of entries in `words.json` (shown as a note).
 - `notLearned = goalTotal − learned`.
 - `toIntroduce = goalTotal − (learned + learning)`.
-- `finishDate = today + ceil(toIntroduce / pace)` days. Shown as "—" if pace is 0.
+- `LEARN_DAYS = INTERVAL[2] + INTERVAL[3] + INTERVAL[4]` (13): the shortest path from a
+  new word to box 5.
+- `finishDate = today + ceil(toIntroduce / pace) + LEARN_DAYS` days, i.e. the estimated date
+  all words are learned, not just introduced (FR-019). Shown as "—" if pace is 0.
 
 ## Storage versioning
 

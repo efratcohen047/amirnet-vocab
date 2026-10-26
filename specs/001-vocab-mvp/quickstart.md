@@ -31,8 +31,8 @@ node scripts/build-ranked-list.mjs   # writes data/ranked.csv (expect 3,185 rows
 | `tests/data/words.test.ts` | contract rules in [word-data.md](contracts/word-data.md); ≥ 500 entries (SC-005) |
 | `tests/core/leitner.test.ts` | every transition in the data-model table (FR-011–FR-013) |
 | `tests/core/session.test.ts` | session building: due order, N new, 100-review cap, "already know" refill, retry once |
-| `tests/core/stats.test.ts` | progress counts, streak (incl. rest days, midnight), pace and finish date |
-| `tests/core/flags.test.ts` | CSV export quoting and column order |
+| `tests/core/stats.test.ts` | progress counts, streak (incl. rest days, midnight), pace and finish date (incl. the 13 learning days) |
+| `tests/core/flags.test.ts` | CSV export quoting and column order; flags auto-close when the translation changes (FR-022a) |
 
 ## Manual validation (on a phone, against the deployed URL)
 

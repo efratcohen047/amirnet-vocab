@@ -55,17 +55,28 @@ settings incl. flag export), ≤ 3,185 words
 | II. Usable Today | Static site deployed by CI on every merge to `main`; release 1 ships with 500 words | ✅ |
 | III. Security | HTTPS (GitHub Pages); no secrets (no backend, no keys); flag notes and all content rendered as React text (auto-escaped); no accounts; nothing hosted on the laptop | ✅ |
 | IV. Offline-First | Precaching service worker; word list bundled; all state local (R6, R10) | ✅ |
-| V. Learning Effectiveness | Leitner SRS, rank-ordered new words from general + academic frequency lists, short daily session, visible progress. Exam-style exercises are out of scope (spec) | ✅ |
+| V. Learning Effectiveness | Leitner SRS, rank-ordered new words from general + academic frequency lists, short daily session, visible progress | ✅ (exam-style exercises **deferred**, see below) |
 | VI. Mobile-First, Hebrew | `dir="rtl"`, English in `dir="ltr"` elements, large tap targets (R11) | ✅ |
 | VII. Content as Data | `data/words.json` with rank (required), editable without code; contract + CI validation | ✅ |
 | VIII. Privacy | No network calls besides the app's own files; flags leave the device only when she shares them | ✅ |
 | IX. Zero Cost | GitHub Pages + Actions free tier | ✅ |
 | X. Readable Code | README (run, deploy, attribution, data license); unit tests for all core logic | ✅ |
-| XI. Measurable Outcomes | 20/day default (configurable). Practice test is a later feature (spec out of scope) | ✅ |
+| XI. Measurable Outcomes | 20/day default (configurable) | ✅ (biweekly practice test **deferred**, see below) |
 | XII. Motivation | Streak + "how much is left" with finish date; neither blocks starting a session | ✅ |
 | Tech constraints | Single user, no login; client-side storage; mobile Safari/Chrome | ✅ |
 
-**Result**: passes. No violations, so Complexity Tracking stays empty.
+**Result**: passes for this feature. No violations, so Complexity Tracking stays empty.
+
+**Deferred constitution obligations** (app-level MUSTs that this MVP doesn't deliver; each
+needs its own feature through `/speckit-specify`):
+
+| Principle | Obligation | Planned feature |
+|---|---|---|
+| V | Exercises in Amirnet formats: sentence completion and restatement | `002-exam-exercises`, the next feature after this MVP |
+| XI | Practice test every two weeks, results shown as a trend | `003-practice-test`, after 002 |
+
+The constitution isn't fully met until both ship. Until then, every plan's Constitution
+Check must list them here as deferred.
 
 **Post-design re-check (after Phase 1)**: passes. The design adds no dependencies, services
 or storage beyond the above. One new obligation came out of research: ShareAlike (R1)
