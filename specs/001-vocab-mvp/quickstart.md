@@ -31,7 +31,7 @@ node scripts/build-ranked-list.mjs   # writes data/ranked.csv (expect 3,185 rows
 | `tests/data/words.test.ts` | contract rules in [word-data.md](contracts/word-data.md); ≥ 500 entries (SC-005) |
 | `tests/core/leitner.test.ts` | every transition in the data-model table (FR-011–FR-013) |
 | `tests/core/session.test.ts` | session building: due order, N new, 100-review cap, "already know" refill, retry once |
-| `tests/core/stats.test.ts` | progress counts, streak (incl. rest days, midnight), pace and finish date (incl. the 13 learning days) |
+| `tests/core/stats.test.ts` | progress counts, streak (incl. rest days, midnight), accuracy |
 | `tests/core/flags.test.ts` | CSV export quoting and column order; flags auto-close when the translation changes (FR-022a) |
 
 ## Manual validation (on a phone, against the deployed URL)
@@ -48,8 +48,8 @@ node scripts/build-ranked-list.mjs   # writes data/ranked.csv (expect 3,185 rows
 6. **Offline** (SC-002, FR-024): enable airplane mode, restart the phone, open the app →
    finish a full session (20 new + reviews) in under 15 minutes.
 7. **Persistence** (SC-004): after the restart, progress, streak and flags are unchanged.
-8. **Progress** (Story 3, SC-006): counts add up to 3,185; "loaded" shows 500; the finish
-   date uses the target pace for the first 7 days.
+8. **Progress** (Story 3, SC-006): counts add up to 3,185; "loaded" shows 500; "how much is
+   left" shows a word count and no date.
 9. **Flags** (Story 4, SC-007): flag 3 words (one with a note containing a comma), export →
    the shared text has 3 rows that parse as CSV.
 10. **Content update** (FR-007): deploy a change to one translation → open the app online

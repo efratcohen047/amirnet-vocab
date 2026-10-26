@@ -24,7 +24,7 @@
 | 5 | Resume mid-session (FR-014) | ✅ browser | Reload at card 7 of 22 → home offers "המשך" → resumes at 7 of 22 |
 | 6 | Offline full session (SC-002, FR-024) | ✅ browser / ☐ phone | Live site reloads offline from the SW cache. Airplane mode + phone restart, timed under 15 min ☐ |
 | 7 | Persistence (SC-004) | ✅ browser | Progress identical after a full browser restart (5 → 5 words) |
-| 8 | Progress numbers (Story 3, SC-006) | ✅ browser | 3,164 / 20 / 1 sum to 3,185; finish date 16 Apr 2027 matches the hand calculation (⌈3,164/20⌉ + 13 days); target-pace note shown |
+| 8 | Progress numbers (Story 3, SC-006) | ✅ browser | 3,164 / 20 / 1 sum to 3,185; "how much is left" shows 3,184 words. The finish date was removed afterwards by owner decision (constitution v1.2.0) |
 | 9 | Flags and export (Story 4, SC-007) | ✅ browser | 4 flags → CSV with 4 rows, comma and quote in the note correctly quoted; unflag works; a changed translation closes its flag on reload (FR-022a). Real share sheet on a phone ☐ |
 | 10 | Content update keeps progress (FR-007) | ✅ browser (live) | Live deploy with existing progress: new build took over, progress and boxes unchanged (5 words, boxes 1:2, 2:3) |
 | 11 | No tracking (SC-008, FR-028) | ✅ browser + build | Zero requests to other origins in every run; bundle has no beacon/socket/third-party script (T048) |

@@ -1,19 +1,14 @@
 import type { Counts } from '../core/stats';
-import type { LocalDate } from '../types';
 
 interface Props {
   counts: Counts;
-  finishDate: LocalDate | null;
-  usesTargetPace: boolean;
-  pace: number;
 }
 
 const fmt = (n: number) => n.toLocaleString('he-IL');
 
-const formatDate = (day: LocalDate) =>
-  new Intl.DateTimeFormat('he-IL', { dateStyle: 'long' }).format(new Date(`${day}T12:00:00`));
-
-export default function Progress({ counts: c, finishDate, usesTargetPace, pace }: Props) {
+// No finish date or pace estimate on purpose: against her real timeline it discourages more
+// than it helps (constitution XII, spec FR-019).
+export default function Progress({ counts: c }: Props) {
   const pct = (n: number) => `${(n / c.goal) * 100}%`;
   return (
     <section className="progress">
@@ -45,14 +40,6 @@ export default function Progress({ counts: c, finishDate, usesTargetPace, pace }
       <h2>כמה נשאר</h2>
       <div className="setting">
         <span className="setting-label">{fmt(c.notLearned)} מילים עוד לא נלמדו</span>
-        <span>
-          כל המילים יילמדו בערך עד: <strong>{finishDate ? formatDate(finishDate) : '—'}</strong>
-        </span>
-        <span className="muted">
-          {usesTargetPace
-            ? `לפי היעד של ${fmt(pace)} מילים חדשות ביום. אחרי שבוע של לימוד ההערכה תתבסס על הקצב שלך.`
-            : `לפי הקצב שלך בשבועיים האחרונים: כ-${fmt(Math.round(pace * 10) / 10)} מילים חדשות ביום.`}
-        </span>
       </div>
     </section>
   );

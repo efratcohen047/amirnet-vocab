@@ -3,8 +3,7 @@
 A small offline-first web app (PWA) for learning the ~3,000 English words that matter most for
 the Israeli Amirnet English exam. It was built for one learner who studies mostly on her
 phone. Each day's session mixes due reviews with up to 20 new words (spaced repetition with
-Leitner boxes). Progress, the daily streak and an estimated finish date are shown along the
-way. The UI is in Hebrew.
+Leitner boxes). Progress and the daily streak are shown along the way. The UI is in Hebrew.
 
 **Live app:** https://efratcohen047.github.io/amirnet-vocab/ (open it on a phone and use
 "Add to Home Screen"; after the first visit it works offline)

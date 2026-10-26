@@ -14,7 +14,7 @@ import Progress from './screens/Progress';
 import Session from './screens/Session';
 import Settings from './screens/Settings';
 import { addFlag, flagsToCsv, pruneResolved, removeFlag } from './core/flags';
-import { counts, finishDate, pace, streak, usesTargetPace } from './core/stats';
+import { counts, streak } from './core/stats';
 import { store } from './storage';
 import { getToday } from './today';
 import type { FlagMap, History, ProgressMap, Rating, Session as SessionT, Settings as SettingsT } from './types';
@@ -95,19 +95,6 @@ export default function App() {
     if (session) setStudy(skip({ session, progress, history }, now()));
   };
 
-  const renderProgress = () => {
-    const c = counts(words, progress, plannedTotal);
-    const p = pace(history, settings, today);
-    return (
-      <Progress
-        counts={c}
-        pace={p}
-        usesTargetPace={usesTargetPace(history, today)}
-        finishDate={finishDate(c.toIntroduce, p, today)}
-      />
-    );
-  };
-
   if (view === 'session' && session) {
     return (
       <div className="app">
@@ -139,7 +126,7 @@ export default function App() {
             onStart={start}
           />
         )}
-        {view === 'progress' && renderProgress()}
+        {view === 'progress' && <Progress counts={counts(words, progress, plannedTotal)} />}
         {view === 'settings' && (
           <Settings
             settings={settings}

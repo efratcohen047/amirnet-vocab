@@ -128,7 +128,9 @@ appears in the app without code changes; a changed translation keeps the word's 
 
 ## Phase 5: User Story 3 - Progress, streak, "how much is left" (Priority: P2)
 
-**Goal**: Progress counts against the goal total, a daily streak, and a finish-date estimate.
+**Goal**: Progress counts against the goal total, a daily streak, and words left.
+
+> **Changed after delivery (2026-10-26)**: the finish date, pace and `LEARN_DAYS` from T038–T040 were removed by owner decision (constitution v1.2.0, FR-019). "כמה נשאר" now shows only the number of words left.
 
 **Independent Test**: With seeded progress and history, every number on the screen matches a
 hand calculation (quickstart step 8, SC-006).

@@ -115,9 +115,6 @@ The session is complete when `position === cards.length`.
   days exist only when the app was opened that day).
 - **Summary accuracy** (FR-015): `knewCount / (newCount + reviewCount)`. Shown as "—" when
   the denominator is 0.
-- **Pace** (FR-019): sum of `newCount + knownCount` over the last 14 calendar days ÷ number
-  of calendar days in that window since the first study day (max 14). If the first study
-  day was fewer than 7 days ago, pace = Settings.newPerDay.
 
 ### Settings (key `amirnet:v1:settings`)
 
@@ -146,11 +143,7 @@ word is no longer in `words.json` or whose current `he` differs from `shownTrans
 - `new = goalTotal − learned − learning` (includes words not loaded yet).
 - `loaded` = number of entries in `words.json` (shown as a note).
 - `notLearned = goalTotal − learned`.
-- `toIntroduce = goalTotal − (learned + learning)`.
-- `LEARN_DAYS = INTERVAL[2] + INTERVAL[3] + INTERVAL[4]` (13): the shortest path from a
-  new word to box 5.
-- `finishDate = today + ceil(toIntroduce / pace) + LEARN_DAYS` days, i.e. the estimated date
-  all words are learned, not just introduced (FR-019). Shown as "—" if pace is 0.
+- No finish date or pace estimate is computed or shown (FR-019, constitution XII).
 
 ## Storage versioning
 

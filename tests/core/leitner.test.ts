@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { INTERVAL, LEARN_DAYS, rate, statusOf } from '../../src/core/leitner';
+import { INTERVAL, rate, statusOf } from '../../src/core/leitner';
 import type { Box, WordProgress } from '../../src/types';
 
 const TODAY = '2026-10-26';
@@ -16,9 +16,6 @@ const at = (box: Box, overrides: Partial<WordProgress> = {}): WordProgress => ({
 describe('INTERVAL', () => {
   it('is 1/2/4/7/30 days for boxes 1-5 (FR-012)', () => {
     expect(INTERVAL).toEqual({ 1: 1, 2: 2, 3: 4, 4: 7, 5: 30 });
-  });
-  it('gives 13 days as the shortest path from new to box 5', () => {
-    expect(LEARN_DAYS).toBe(13);
   });
 });
 

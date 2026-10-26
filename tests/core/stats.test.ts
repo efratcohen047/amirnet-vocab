@@ -1,6 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { addDays } from '../../src/core/dates';
-import { accuracy, counts, finishDate, goalTotal, pace, streak, usesTargetPace } from '../../src/core/stats';
+import { accuracy, counts, goalTotal, streak } from '../../src/core/stats';
 import type { Box, History, ProgressMap, StudyDay, Word, WordProgress } from '../../src/types';
 
 const TODAY = '2026-10-26';
@@ -53,7 +52,6 @@ describe('counts (FR-017, FR-019)', () => {
       learned: 2,
       new: 3181,
       notLearned: 3183,
-      toIntroduce: 3181,
     });
     expect(c.new + c.learning + c.learned).toBe(c.goal);
   });
@@ -101,40 +99,6 @@ describe('streak (FR-018)', () => {
 
   it('is 0 with no history', () => {
     expect(streak({}, TODAY)).toBe(0);
-  });
-});
-
-describe('pace (FR-019)', () => {
-  it('uses the daily target when the first study day was fewer than 7 days ago', () => {
-    const h: History = { '2026-10-21': done(5), '2026-10-26': done(5) };
-    expect(usesTargetPace(h, TODAY)).toBe(true);
-    expect(pace(h, { newPerDay: 20 }, TODAY)).toBe(20);
-    expect(pace({}, { newPerDay: 15 }, TODAY)).toBe(15);
-  });
-
-  it('averages new + already-known words per calendar day over the last 14 days', () => {
-    const h: History = {};
-    // Studied every other day for 20 days: 10 new + 2 known each time.
-    for (let i = 0; i < 20; i += 2) h[addDays(TODAY, -i)] = done(10, 2);
-    // Window is the last 14 calendar days (10-13 .. 10-26): 7 study days × 12 words.
-    expect(usesTargetPace(h, TODAY)).toBe(false);
-    expect(pace(h, { newPerDay: 20 }, TODAY)).toBeCloseTo((7 * 12) / 14);
-  });
-
-  it('uses only the days since the first study day when that is under 14 days', () => {
-    const h: History = {};
-    for (let i = 0; i < 10; i++) h[addDays(TODAY, -i)] = done(20); // 10 days of history
-    expect(pace(h, { newPerDay: 5 }, TODAY)).toBe(20);
-  });
-});
-
-describe('finishDate (FR-019)', () => {
-  it('adds the days to introduce every word plus 13 days to learn the last one', () => {
-    expect(finishDate(100, 20, TODAY)).toBe(addDays(TODAY, 5 + 13));
-    expect(finishDate(101, 20, TODAY)).toBe(addDays(TODAY, 6 + 13));
-  });
-  it('is null when the pace is 0', () => {
-    expect(finishDate(100, 0, TODAY)).toBeNull();
   });
 });
 

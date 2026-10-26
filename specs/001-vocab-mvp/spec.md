@@ -31,6 +31,9 @@ flags; offline PWA, single user, Hebrew RTL. Every point of the brief is capture
 - Q: What happens when reviews pile up after missed days? → A: Cap the session at 100
   reviews, most urgent first (lowest box, then most overdue), and add no new words that day;
   the rest carry over.
+- Q (owner, after release): Should "how much is left" show an estimated finish date? → A: No.
+  Her exam is sooner than the full list would take, so the date discourages her. The view
+  shows only the number of words left (constitution v1.2.0, Principle XII).
 
 ## User Scenarios & Testing *(mandatory)*
 
@@ -116,8 +119,8 @@ Add a test entry to the file and confirm it appears in the app with no code chan
 ### User Story 3 - Progress, streak, and "how much is left" (Priority: P2)
 
 From the home screen she can see how far she has come: how many words are new, learning,
-and learned out of the whole list, her current daily streak, and how many words are left
-with an estimated finish date at her current pace.
+and learned out of the whole list, her current daily streak, and how many words are left.
+No finish date is shown: against her real timeline it would discourage her.
 
 **Why this priority**: Keeping up a daily habit for months is what learns 3000 words
 (Principle XII). Valuable, but the app is still useful without it on day one.
@@ -136,11 +139,9 @@ of completed days), open the progress screen and verify each number by hand.
 3. **Given** a streak of 4 and she did not complete a session yesterday, **When** she opens
    the app today, **Then** the streak shows 0 until she completes today's session, after
    which it shows 1.
-4. **Given** she has studied for at least 7 days, **When** she views "how much is left",
-   **Then** she sees the number of words not yet learned out of the goal total (3,000, or the full list size if larger) and an
-   estimated finish date based on her actual recent pace, even if only 500 words are loaded.
-5. **Given** she has fewer than 7 days of history, **When** she views "how much is left",
-   **Then** the estimate uses the daily new-word target as the pace.
+4. **Given** any amount of progress, **When** she views "how much is left", **Then** she sees
+   the number of words not yet learned out of the goal total (3,000, or the full list size if
+   larger), even if only 500 words are loaded, and no date or time estimate.
 
 ---
 
@@ -181,7 +182,8 @@ three with the word, the shown translation, her note, and the date.
   of the same session. The second showing does not change its box or the accuracy summary.
 - **All loaded words introduced**: When every word currently in the list has been introduced,
   sessions contain only due reviews, and the home screen says no new words remain until the
-  next batch. Progress and the finish date still count against the goal total (3,000, or the full list size if larger).
+  next batch. Progress still counts against the goal total (3,000, or the full list size if
+  larger).
 - **Nothing due**: If no reviews are due and no new words remain, the home screen says so and
   shows the next due date; opening the app on such a day records a rest day, which does not
   break the streak (FR-018).
@@ -263,12 +265,9 @@ three with the word, the shown translation, her note, and the date.
   streak: a day on which she opened the app and there was nothing to study (no reviews due,
   no new words left). A day on which the app was not opened breaks the streak unless the
   session was completed.
-- **FR-019**: A "how much is left" view MUST show words not yet learned (goal total minus
-  learned) and an estimated date by which all goal-total words will be learned. The date is
-  computed as: today + (words not yet introduced ÷ pace) days + 13 days, where 13 days is the
-  shortest path from a new word to box 5 (2 + 4 + 7 days). Pace is the average number of new
-  words introduced per calendar day (including words marked "already know") over the last
-  14 days, or the daily target if fewer than 7 days of history exist.
+- **FR-019**: A "how much is left" view MUST show the number of words not yet learned (goal
+  total minus learned). It MUST NOT show a finish date, pace, or any other time-to-goal
+  estimate (constitution Principle XII).
 - **FR-020**: Streak and progress displays MUST NOT block or slow down starting a session.
 
 **Content quality**
@@ -295,7 +294,7 @@ three with the word, the shown translation, her note, and the date.
 - **FR-028**: The app MUST NOT include analytics, tracking, ads, or third-party data sharing.
 - **FR-029**: The app MUST be served over HTTPS from a free hosting platform.
 - **FR-030**: Core learning logic (box movement, due-date calculation, session building,
-  streak, progress counts, finish-date estimate) MUST have unit tests (Principle X).
+  streak, progress counts) MUST have unit tests (Principle X).
 
 ### Key Entities
 
@@ -308,7 +307,7 @@ three with the word, the shown translation, her note, and the date.
   contains, which cards are already rated, and whether it is completed.
 - **Study day record**: One per calendar day studied: date, completed or not, new words
   introduced, words marked "already know", reviews done, number rated "knew it". Drives the
-  streak, summary, and pace.
+  streak and summary.
 - **Settings**: New words per day (default 20).
 - **Translation flag**: Word identifier, translation shown at the time, optional note, date
   flagged.

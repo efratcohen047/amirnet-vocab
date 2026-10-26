@@ -1,18 +1,17 @@
 <!--
 Sync Impact Report
-- Version change: 1.1.0 → 1.1.1 (PATCH: wording clarification)
+- Version change: 1.1.1 → 1.2.0 (MINOR: one rule removed from a principle; principle kept)
 - Modified principles:
-  V. Learning Effectiveness First — "Frequency-first" now ranks words by general and
-  academic English frequency from the source word lists, as a proxy for Amirnet exam
-  frequency (no public Amirnet word-frequency data exists)
+  XII. Motivation & Momentum — the "how much is left" view no longer shows an estimated
+  finish date. Against the learner's real timeline the date discouraged more than it
+  motivated, which works against the principle itself (owner decision, 2026-10-26)
 - Added sections: none
 - Removed sections: none
 - Templates:
   ✅ .specify/templates/plan-template.md — no change needed
   ✅ .specify/templates/spec-template.md — no change needed
   ✅ .specify/templates/tasks-template.md — no change needed
-  ✅ .claude/skills/speckit-* — no references to frequency ordering
-  ⚠ README.md — does not exist yet; MUST be created during first feature (Principle X)
+  ✅ specs/001-vocab-mvp/ — FR-019, Story 3, plan, data model and quickstart updated
 - Deferred TODOs: none
 -->
 
@@ -139,8 +138,8 @@ know whether the app is moving her from 55 toward 85.
 ### XII. Motivation & Momentum
 
 - A daily streak is shown and kept alive by completing the daily session.
-- A "how much is left" view shows remaining words and an estimated finish date at the
-  current pace.
+- A "how much is left" view shows the number of words remaining. It MUST NOT show a
+  finish date or other time-to-goal estimate: those discourage more than they motivate.
 - Motivation features MUST stay lightweight and never block or slow down studying.
 
 **Rationale**: Consistency over months is what learns 3000 words; visible progress keeps
@@ -176,4 +175,4 @@ her coming back.
 - When principles conflict, priority order is:
   III Security > II Usable Today > V Learning Effectiveness > I Fast & Dirty > all others.
 
-**Version**: 1.1.1 | **Ratified**: 2026-10-21 | **Last Amended**: 2026-10-25
+**Version**: 1.2.0 | **Ratified**: 2026-10-21 | **Last Amended**: 2026-10-26

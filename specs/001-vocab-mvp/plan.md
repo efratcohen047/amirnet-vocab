@@ -10,7 +10,7 @@ A phone-first, offline-capable flashcard PWA for one Hebrew-speaking learner. Wo
 from NGSL + NAWL (CC BY-SA 4.0): the top 500 NGSL words are dropped, and the rest are
 interleaved ~2.6:1 into a 3,185-word ranked list. Content is AI-drafted in batches of 100,
 starting with ranks 1–500. Daily sessions use 5 Leitner boxes (1/2/4/7/30 days) with
-"I already know this", a 100-review backlog cap, progress/streak/finish-date views, and
+"I already know this", a 100-review backlog cap, progress and streak views (no finish date), and
 CSV export of wrong-translation flags.
 
 **Technical approach**: a static React + TypeScript app built with Vite, made installable
@@ -62,7 +62,7 @@ settings incl. flag export), ≤ 3,185 words
 | IX. Zero Cost | GitHub Pages + Actions free tier | ✅ |
 | X. Readable Code | README (run, deploy, attribution, data license); unit tests for all core logic | ✅ |
 | XI. Measurable Outcomes | 20/day default (configurable) | ✅ (biweekly practice test **deferred**, see below) |
-| XII. Motivation | Streak + "how much is left" with finish date; neither blocks starting a session | ✅ |
+| XII. Motivation | Streak + "how much is left" as a word count, with no finish date (constitution v1.2.0); neither blocks starting a session | ✅ |
 | Tech constraints | Single user, no login; client-side storage; mobile Safari/Chrome | ✅ |
 
 **Result**: passes for this feature. No violations, so Complexity Tracking stays empty.
@@ -116,7 +116,7 @@ src/
 │   ├── dates.ts             # LocalDate helpers (addDays, diffDays, today)
 │   ├── leitner.ts           # box transitions, intervals (FR-011–013)
 │   ├── session.ts           # build session, apply rating, refill, retry (FR-009, 011a, 016)
-│   ├── stats.ts             # counts, streak, pace, finish date (FR-017–019)
+│   ├── stats.ts             # counts, streak, accuracy (FR-015, FR-017–019)
 │   └── flags.ts             # CSV export (FR-023)
 ├── storage.ts               # versioned localStorage load/save (R6)
 ├── words.ts                 # imports data/words.json, exposes typed list
